@@ -81,7 +81,7 @@ func (s *SafeSeen) Len() int {
 }
 
 func fetchSubdomains(domain string, client *http.Client, subCount *int64) []string {
-	url := fmt.Sprintf("https://sub-scan-api.reverseipdomain.com/?domain=%s", domain)
+	url := fmt.Sprintf("https://api.example.com/?domain=%s", domain)
 	req, _ := http.NewRequest("GET", url, nil)
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 	resp, err := client.Do(req)
@@ -356,3 +356,4 @@ func main() {
 	// Bloque indéfiniment, progression s'affiche seule
 	select {}
 }
+
